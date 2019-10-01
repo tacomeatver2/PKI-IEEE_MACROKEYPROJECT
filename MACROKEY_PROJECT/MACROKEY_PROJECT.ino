@@ -9,6 +9,8 @@
 //////////////////////////////////////////////////////
 #include <Encoder.h>
 #include <HID-Project.h>
+//import library https://github.com/NicoHood/HID
+//
 
 #define B1 1
 #define B2 0
