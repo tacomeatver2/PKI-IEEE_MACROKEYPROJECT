@@ -1,6 +1,7 @@
-//MACRO_KEYPAD
+//MACROKEY PROJECT
+//PKI-IEEE
 //Takumi Ito
-//1/25/19
+//9/30/19
 //This is a code to control an aruduino micro to send commands to the PC based on the key pressed on the keypad.
 
 //////////////////////////////////////////////////////
