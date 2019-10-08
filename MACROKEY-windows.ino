@@ -27,7 +27,7 @@
 //import library https://github.com/NicoHood/HID
 //import library https://github.com/PaulStoffregen/Encoder
 
-// or click SKETCH >> Include libraries >> Manage libraries >> search for HID >> scroll down until you see HID-Project by NicoHood version 2.6.1 >> then install that if you are unsure of how to import the libraries correctly
+// or click Tools>> Manage libraries >> search for HID >> scroll down until you see HID-Project by NicoHood version 2.6.1 >> then install that if you are unsure of how to import the libraries correctly
 // same steps but search for encoder >> scroll down until you see Encoder by PaulStoffregen verson 1.4.1 >> then install it.
 //
 
