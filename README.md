@@ -1,6 +1,6 @@
 # PKI-IEEE MACROKEY PROJECT
-This is a project for PKI-IEEE a student chapter of IEEE at University of Nebraska-Lincoln at Omaha.
-The project is a macrokey(hotkey) project, each keys and rotary encoder is programmable and you can control your mucsic/video app, call apps, open a specific website, and anything you can imagine using a keyboard. This project will give you more soldering experience and programing a Microcontroller.
+This is a project for PKI-IEEE a student chapter of IEEE at University of Nebraska-Lincoln at Omaha.  
+The project is a macrokey(hotkey) project, each keys and rotary encoder is programmable and you can control your mucsic/video app, call apps, open a specific website, and anything you can imagine using a keyboard. This project will give you more soldering experience and programing a Microcontroller.  
 
 ## Getting Started
 
@@ -28,9 +28,9 @@ import libraries
 
 ### Build the hardware
 
-If you have the PCB, solder the components to the correct position.
-You may change the resistor for the LED to change the brightness.
-On the PCB there are also LEDs for each key which is connected to one GPIO pin.
+If you have the PCB, solder the components to the correct position.  
+You may change the resistor for the LED to change the brightness.  
+On the PCB there are also LEDs for each key which is connected to one GPIO pin.  
 
 ### Uploading the software
 
