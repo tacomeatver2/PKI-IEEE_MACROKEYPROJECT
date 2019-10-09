@@ -38,40 +38,21 @@ Use Arduino IDE with the libraries imported.
 Plug a microusb cable to the Arduino pro micro.
 Go to tools > Boards > Arduino pro micro.
 Then choose the correct device through Tools > Boards > Serial Port.
+Press upload to upload the code.
 
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
+The code can be modifyed by changing the fuction of each button and rotary encoder.
 
 ## Built With
 
 * [EasyEDA]() - The EDA software used to design the PCB
 * [Arduino IDE](https://maven.apache.org/) - Used to program the project
 
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Takumi Ito** - 
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/nekotakumi/PKI-IEEE_MACROKEYPROJECT) who participated in this project.
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
