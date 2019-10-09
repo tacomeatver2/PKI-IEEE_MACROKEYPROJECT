@@ -34,13 +34,13 @@ On the PCB there are also LEDs for each key which is connected to one GPIO pin.
 
 ### Uploading the software
 
-Use Arduino IDE with the libraries imported.
-Plug a microusb cable to the Arduino pro micro.
-Go to tools > Boards > Arduino pro micro.
-Then choose the correct device through Tools > Boards > Serial Port.
-Press upload to upload the code.
-
-The code can be modifyed by changing the fuction of each button and rotary encoder.
+Use Arduino IDE with the libraries imported.  
+Plug a microusb cable to the Arduino pro micro.  
+Go to tools > Boards > Arduino pro micro.  
+Then choose the correct device through Tools > Boards > Serial Port.  
+Press upload to upload the code.  
+  
+The code can be modifyed by changing the fuction of each button and rotary encoder.  
 
 ## Built With
 
