@@ -1,43 +1,43 @@
 # PKI-IEEE MACROKEY PROJECT
-One Paragraph of project description goes here
+This is a project for PKI-IEEE a student chapter of IEEE at University of Nebraska-Lincoln at Omaha.
+The project is a macrokey(hotkey) project, each keys and rotary encoder is programmable and you can control your mucsic/video app, call apps, open a specific website, and anything you can imagine using a keyboard. This project will give you more soldering experience and programing a Microcontroller.
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you instructions on the hardware design and the software design. Please follow the instructions to complete the project. 
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+To work on this project it is perfered to have the PCB but it is not required.
 
-```
-Give examples
-```
+Components
+- Arduino pro Micro (Choose because microUSB)
+- Keyboard keys
+- Keyboard Keycaps (X-Key)
+- Rotary encoder
+- 3mm LED
+- 330Ω Resistor
+- PCB
 
-### Installing
+To program this project you will need Arduino IDE.
+import libraries
+- https://github.com/NicoHood/HID
+- https://github.com/PaulStoffregen/Encoder
 
-A step by step series of examples that tell you how to get a development env running
 
-Say what the step will be
 
-```
-Give the example
-```
+### Build the hardware
 
-And repeat
+If you have the PCB, solder the components to the correct position.
+You may change the resistor for the LED to change the brightness.
+On the PCB there are also LEDs for each key which is connected to one GPIO pin.
 
-```
-until finished
-```
+### Uploading the software
 
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
+Use Arduino IDE with the libraries imported.
+Plug a microusb cable to the Arduino pro micro.
+Go to tools > Boards > Arduino pro micro.
+Then choose the correct device through Tools > Boards > Serial Port.
 
 ```
 Give an example
@@ -51,19 +51,10 @@ Explain what these tests test and why
 Give an example
 ```
 
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+* [EasyEDA]() - The EDA software used to design the PCB
+* [Arduino IDE](https://maven.apache.org/) - Used to program the project
 
 ## Versioning
 
