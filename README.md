@@ -1,42 +1,43 @@
+
 # PKI-IEEE MACROKEY PROJECT
-This is a project for PKI-IEEE a student chapter of IEEE at University of Nebraska-Lincoln at Omaha.  
-The project is a macrokey(hotkey) project, each keys and rotary encoder is programmable and you can control your mucsic/video app, call apps, open a specific website, and anything you can imagine using a keyboard. This project will give you more soldering experience and programing a Microcontroller.  
+
+This is a project designed for PKI-IEEE, a student chapter of IEEE based at the University of Nebraska-Lincoln's Omaha campus.  
+The project is a macrokey (hotkey) project, where each of six keys and the rotary encoder are programmable, allowing you to control your music/video apps and call apps, as well as open a specific website or anything else you can do using a keyboard. This project will give you more experience with soldering and programing a microcontroller.
 
 ## Getting Started
 
-These instructions will get you instructions on the hardware design and the software design. Please follow the instructions to complete the project. 
+These instructions will guide you through the hardware and software design. Please follow the instructions to complete the project.
 
 ### Prerequisites
 
-To work on this project it is perfered to have the PCB but it is not required.
+To work on this project it is preferred to have the PCB but it is not required as you could breadboard the project instead.
 
 Components
-- Arduino pro Micro (Choose because microUSB)
-- Keyboard keys
+
+- Arduino Pro Micro (Chosen because microUSB)
+- Keyboard Keys
 - Keyboard Keycaps (X-Key)
-- Rotary encoder
+- Rotary Encoder
 - 3mm LED
 - 330Ω Resistor
-- PCB
+- PCB designed for this project
 
-To program this project you will need Arduino IDE.
-import libraries
-- https://github.com/NicoHood/HID
-- https://github.com/PaulStoffregen/Encoder
+To program this project you will need Arduino IDE and these import libraries.
 
-
+- <https://github.com/NicoHood/HID>
+- <https://github.com/PaulStoffregen/Encoder>
 
 ### Build the hardware
 
-If you have the PCB, solder the components to the correct position.  
-You may change the resistor for the LED to change the brightness.  
-On the PCB there are also LEDs for each key which is connected to one GPIO pin.  
+If you have the PCB, solder the components to the correct locations.  
+You may adjust the resistor value to change the brightness of the LED.
+On the PCB, there are also LEDs for each key which are connected to one GPIO pin.
 
 ### Uploading the software
 
-Use Arduino IDE with the libraries imported.  
-Plug a microusb cable to the Arduino pro micro.  
-Go to tools > Boards > Arduino pro micro.  
+Use Arduino IDE with the previously mentioned libraries imported.
+Plug a MicroUSB cable to the Arduino Pro Micro.
+In Arduino IDE, go to tools > Boards > Arduino pro micro.
 Then choose the correct device through Tools > Boards > Serial Port.  
 Press upload to upload the code.  
   
@@ -44,12 +45,14 @@ The code can be modifyed by changing the fuction of each button and rotary encod
 
 ## Built With
 
-* [EasyEDA]() - The EDA software used to design the PCB
-* [Arduino IDE](https://maven.apache.org/) - Used to program the project
+* [EasyEDA]() - The EDA software used to design the PCB.
+* [Arduino IDE](https://maven.apache.org/) - Used to program the project.
 
 ## Authors
 
-* **Takumi Ito** - 
+- **Takumi Ito** - Designed project and software template.
+- **Eduardo Mendoza** - 
+- **Drew Carlson** - Readme proofreading.
 
 See also the list of [contributors](https://github.com/nekotakumi/PKI-IEEE_MACROKEYPROJECT) who participated in this project.
 
