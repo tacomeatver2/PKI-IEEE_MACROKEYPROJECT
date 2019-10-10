@@ -51,8 +51,6 @@ The code can be modifyed by changing the fuction of each button and rotary encod
 ## Authors
 
 - **Takumi Ito** - Designed project and software template.
-- **Eduardo Mendoza** - 
-- **Drew Carlson** - Readme proofreading.
 
 See also the list of [contributors](https://github.com/nekotakumi/PKI-IEEE_MACROKEYPROJECT) who participated in this project.
 
