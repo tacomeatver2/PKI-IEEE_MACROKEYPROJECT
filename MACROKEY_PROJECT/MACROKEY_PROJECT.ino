@@ -39,199 +39,6 @@ String url;
 boolean modeos = 0; //mac = 0 win = 1
 
 //////////////////////////////////////////////////////
-//Setup
-//////////////////////////////////////////////////////
-void setup() {
-Serial.print("set ");
-  pinMode(pinButton, INPUT_PULLUP);
-  pinMode (B1, INPUT_PULLUP);
-  pinMode (B2, INPUT_PULLUP);
-  pinMode (B3, INPUT_PULLUP);
-  pinMode (B4, INPUT_PULLUP);
-  pinMode (B5, INPUT_PULLUP);
-  pinMode (B6, INPUT_PULLUP);
-
-
-  // initialize the LED pin as an output:
-  pinMode(L1, OUTPUT);
-  pinMode(L2, OUTPUT);
-  digitalWrite(L2, HIGH);
-
-
-  Serial.begin(9600);
-  Consumer.begin();
-  delay(1000);
-
-  for(int i = 50; i > 0; i--){
-  Consumer.write(MEDIA_VOLUME_DOWN);
-  delay(1);
-  }
-}
-
-//////////////////////////////////////////////////////
-//Loop
-//////////////////////////////////////////////////////
-void loop() {
-  if (modeos = 0){
-    int newPosition = myEnc.read();
-
-    if (newPosition != oldPosition) {
-      Serial.println("new");
-      safePosition = newPosition;
-      if(newPosition < 0){
-        safePosition = 0;
-        myEnc.write(safePosition);
-      }
-      if(newPosition > 400){
-        safePosition = 400;
-        myEnc.write(safePosition);
-      }
-      oldPosition = safePosition;
-      volume = safePosition / 4;
-      volume = volume / 2;
-      noInterrupts();
-      Serial.print("calc volume: ");
-      Serial.print(volume);
-      Serial.print(" act volume: ");
-      Serial.print(actualVolume);
-      Serial.println("");
-      changeVolume();
-      interrupts();
-    }
-
-    if (!digitalRead(pinButton)) {
-
-      Consumer.write(MEDIA_VOLUME_MUTE);
-      muted = !muted;
-      digitalWrite(L1, HIGH);
-      keyrelease();
-    }
-    //Previous media
-    if (digitalRead(B1) == LOW)
-    {
-      Consumer.write(MEDIA_PREVIOUS);
-      keyrelease();
-
-    }
-    // play and pause media
-    if (digitalRead(B2) == LOW)
-    {
-      Consumer.write(MEDIA_PLAY_PAUSE);
-      keyrelease();
-
-    }
-    // Next media
-    if (digitalRead(B3) == LOW)
-    {
-      Consumer.write(MEDIA_NEXT);
-      keyrelease();
-
-    }
-    //Open terminal
-    if (digitalRead(B4) == LOW)
-    {
-      app = "Terminal";
-      spotlight_mac(app);
-      keyrelease();
-
-    }
-    //Opening Unomaha Canvas page
-      if (digitalRead(B5) == LOW)
-    {
-      url = "https://unomaha.instructure.com/";
-      chrome_mac(url);
-      keyrelease();
-    }
-    //Taking screenshot on a MAC
-      if (digitalRead(B6) == LOW)
-    {
-      Keyboard.press(KEY_LEFT_GUI);
-      Keyboard.press(KEY_LEFT_SHIFT);
-      Keyboard.press('4');
-      keyrelease();
-    }
-  }
-  }
-  else{
-    int newPosition = myEnc.read();
-    if (newPosition != oldPosition)
-    {
-      Serial.println("new");
-      safePosition = newPosition;
-      if(newPosition < 0){
-        safePosition = 0;
-        myEnc.write(safePosition);
-      }
-      if(newPosition > 400){
-        safePosition = 400;
-        myEnc.write(safePosition);
-      }
-      oldPosition = safePosition;
-      volume = safePosition / 4;
-      volume = volume / 2;
-      noInterrupts();
-      Serial.print("calc volume: ");
-      Serial.print(volume);
-      Serial.print(" act volume: ");
-      Serial.print(actualVolume);
-      Serial.println("");
-      changeVolume();
-      interrupts();
-    }
-    if (!digitalRead(pinButton))
-    {
-
-      Consumer.write(MEDIA_VOLUME_MUTE);
-      muted = !muted;
-      digitalWrite(L1, HIGH);
-      keyrelease();
-    }
-    //Previous media
-    if (digitalRead(B1) == LOW)
-    {
-      Consumer.write(MEDIA_PREVIOUS);
-      keyrelease();
-
-    }
-    //Play and stop media
-    if (digitalRead(B2) == LOW)
-    {
-      Consumer.write(MEDIA_PLAY_PAUSE);
-      keyrelease();
-
-    }
-    //Next media
-    if (digitalRead(B3) == LOW)
-    {
-      Consumer.write(MEDIA_NEXT);
-      keyrelease();
-
-    }
-    //Open specific app
-    if (digitalRead(B4) == LOW)
-    {
-      app = "xxxxxxx";
-      start_win(app);
-      keyrelease();
-    }
-    //Open specific website
-    if (digitalRead(B5) == LOW)
-    {
-      url = "google.com";
-      chrome_win();
-      keyrelease();
-    }
-    //Screenshot on win10
-    if (digitalRead(B6) == LOW)
-    {
-      Keyboard.press(KEY_LEFT_GUI);
-      Keyboard.press(KEY_LEFT_SHIFT);
-      Keyboard.press('s');
-      keyrelease();
-    }
-  }
-
-//////////////////////////////////////////////////////
 //Tools
 //////////////////////////////////////////////////////
 
@@ -347,3 +154,197 @@ void keyrelease(){
     digitalWrite(L1, LOW);
     delay(300);
 }
+//////////////////////////////////////////////////////
+//Setup
+//////////////////////////////////////////////////////
+void setup() {
+Serial.print("set ");
+  pinMode(pinButton, INPUT_PULLUP);
+  pinMode (B1, INPUT_PULLUP);
+  pinMode (B2, INPUT_PULLUP);
+  pinMode (B3, INPUT_PULLUP);
+  pinMode (B4, INPUT_PULLUP);
+  pinMode (B5, INPUT_PULLUP);
+  pinMode (B6, INPUT_PULLUP);
+
+
+  // initialize the LED pin as an output:
+  pinMode(L1, OUTPUT);
+  pinMode(L2, OUTPUT);
+  digitalWrite(L2, HIGH);
+
+
+  Serial.begin(9600);
+  Consumer.begin();
+  delay(1000);
+
+  for(int i = 50; i > 0; i--){
+  Consumer.write(MEDIA_VOLUME_DOWN);
+  delay(1);
+  }
+}
+
+//////////////////////////////////////////////////////
+//Loop
+//////////////////////////////////////////////////////
+void loop() {
+  if (modeos = 0){
+    int newPosition = myEnc.read();
+
+    if (newPosition != oldPosition) {
+      Serial.println("new");
+      safePosition = newPosition;
+      if(newPosition < 0){
+        safePosition = 0;
+        myEnc.write(safePosition);
+      }
+      if(newPosition > 400){
+        safePosition = 400;
+        myEnc.write(safePosition);
+      }
+      oldPosition = safePosition;
+      volume = safePosition / 4;
+      volume = volume / 2;
+      noInterrupts();
+      Serial.print("calc volume: ");
+      Serial.print(volume);
+      Serial.print(" act volume: ");
+      Serial.print(actualVolume);
+      Serial.println("");
+      changeVolume();
+      interrupts();
+    }
+
+    if (!digitalRead(pinButton)) {
+
+      Consumer.write(MEDIA_VOLUME_MUTE);
+      muted = !muted;
+      digitalWrite(L1, HIGH);
+      keyrelease();
+    }
+    //Previous media
+    if (digitalRead(B1) == LOW)
+    {
+      Consumer.write(MEDIA_PREVIOUS);
+      keyrelease();
+
+    }
+    // play and pause media
+    if (digitalRead(B2) == LOW)
+    {
+      Consumer.write(MEDIA_PLAY_PAUSE);
+      keyrelease();
+
+    }
+    // Next media
+    if (digitalRead(B3) == LOW)
+    {
+      Consumer.write(MEDIA_NEXT);
+      keyrelease();
+
+    }
+    //Open terminal
+    if (digitalRead(B4) == LOW)
+    {
+      app = "Terminal";
+      spotlight_mac(app);
+      keyrelease();
+
+    }
+    //Opening Unomaha Canvas page
+      if (digitalRead(B5) == LOW)
+    {
+      url = "https://unomaha.instructure.com/";
+      chrome_mac(url);
+      keyrelease();
+    }
+    //Taking screenshot on a MAC
+      if (digitalRead(B6) == LOW)
+    {
+      Keyboard.press(KEY_LEFT_GUI);
+      Keyboard.press(KEY_LEFT_SHIFT);
+      Keyboard.press('4');
+      keyrelease();
+    }
+  }
+  
+  else{
+    int newPosition = myEnc.read();
+    if (newPosition != oldPosition)
+    {
+      Serial.println("new");
+      safePosition = newPosition;
+      if(newPosition < 0){
+        safePosition = 0;
+        myEnc.write(safePosition);
+      }
+      if(newPosition > 400){
+        safePosition = 400;
+        myEnc.write(safePosition);
+      }
+      oldPosition = safePosition;
+      volume = safePosition / 4;
+      volume = volume / 2;
+      noInterrupts();
+      Serial.print("calc volume: ");
+      Serial.print(volume);
+      Serial.print(" act volume: ");
+      Serial.print(actualVolume);
+      Serial.println("");
+      changeVolume();
+      interrupts();
+    }
+    if (!digitalRead(pinButton))
+    {
+
+      Consumer.write(MEDIA_VOLUME_MUTE);
+      muted = !muted;
+      digitalWrite(L1, HIGH);
+      keyrelease();
+    }
+    //Previous media
+    if (digitalRead(B1) == LOW)
+    {
+      Consumer.write(MEDIA_PREVIOUS);
+      keyrelease();
+
+    }
+    //Play and stop media
+    if (digitalRead(B2) == LOW)
+    {
+      Consumer.write(MEDIA_PLAY_PAUSE);
+      keyrelease();
+
+    }
+    //Next media
+    if (digitalRead(B3) == LOW)
+    {
+      Consumer.write(MEDIA_NEXT);
+      keyrelease();
+
+    }
+    //Open specific app
+    if (digitalRead(B4) == LOW)
+    {
+      app = "xxxxxxx";
+      start_win(app);
+      keyrelease();
+    }
+    //Open specific website
+    if (digitalRead(B5) == LOW)
+    {
+      url = "google.com";
+      chrome_win(url);
+      keyrelease();
+    }
+    //Screenshot on win10
+    if (digitalRead(B6) == LOW)
+    {
+      Keyboard.press(KEY_LEFT_GUI);
+      Keyboard.press(KEY_LEFT_SHIFT);
+      Keyboard.press('s');
+      keyrelease();
+    }
+
+  }
+  }
