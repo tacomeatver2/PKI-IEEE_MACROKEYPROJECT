@@ -43,43 +43,21 @@ boolean modeos = 0; //mac = 0 win = 1
 //////////////////////////////////////////////////////
 
 void changeVolume(){
-if (volume != oldVolume) {
-    if(volume > oldVolume){
-      //delay(100);
-      //Consumer.write(MEDIA_VOLUME_UP);
-
-      String app = "spotify";
-      spotlight_mac(app);
-      delay(300);
-
-      Keyboard.press(KEY_LEFT_GUI);
-      Keyboard.press(KEY_DOWN_ARROW);
-      digitalWrite(L1, HIGH);
-      delay(100);
-      Keyboard.releaseAll();
-      digitalWrite(L1, LOW);
-      actualVolume = actualVolume + 2;
-      oldVolume = volume;
-      delay(500);
+  if (volume != oldVolume) {
+      if(volume > oldVolume){
+        //delay(100);
+        Consumer.write(MEDIA_VOLUME_UP);
+        actualVolume = actualVolume + 5;
+        oldVolume = volume; 
+      }
+  
+      else{
+        //delay(100);
+        Consumer.write(MEDIA_VOLUME_DOWN);
+        actualVolume = actualVolume - 5;
+        oldVolume = volume; 
+      }
     }
-    else{
-      //delay(100);
-      //Consumer.write(MEDIA_VOLUME_DOWN);
-      String app = "spotify";
-      spotlight_mac(app);
-      delay(300);
-      Keyboard.press(KEY_LEFT_GUI);
-      Keyboard.press(KEY_UP_ARROW);
-      delay(300);
-      digitalWrite(L1, HIGH);
-      delay(100);
-      Keyboard.releaseAll();
-      digitalWrite(L1, LOW);
-      actualVolume = actualVolume - 2;
-      oldVolume = volume;
-      delay(300);
-    }
-  }
 }
 void spotlight_mac(String app)
 {
