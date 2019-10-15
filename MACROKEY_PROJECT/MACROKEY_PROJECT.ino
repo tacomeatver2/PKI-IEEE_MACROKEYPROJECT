@@ -304,7 +304,7 @@ void loop() {
     //Open specific app
     if (digitalRead(B4) == LOW)
     {
-      app = "xxxxxxx";
+      app = "1234";
       start_win(app);
       keyrelease();
     }
