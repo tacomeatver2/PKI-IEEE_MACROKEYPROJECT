@@ -53,7 +53,7 @@ if (volume != oldVolume) {
       delay(300);
 
       Keyboard.press(KEY_LEFT_GUI);
-      Keyboard.press(KEY_UP_ARROW);
+      Keyboard.press(KEY_DOWN_ARROW);
       digitalWrite(L1, HIGH);
       delay(100);
       Keyboard.releaseAll();
@@ -69,7 +69,7 @@ if (volume != oldVolume) {
       spotlight_mac(app);
       delay(300);
       Keyboard.press(KEY_LEFT_GUI);
-      Keyboard.press(KEY_DOWN_ARROW);
+      Keyboard.press(KEY_UP_ARROW);
       delay(300);
       digitalWrite(L1, HIGH);
       delay(100);
