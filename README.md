@@ -11,7 +11,10 @@ These instructions will guide you through the hardware and software design. Plea
 ### Prerequisites
 
 To work on this project it is preferred to have the PCB but it is not required as you could breadboard the project instead.
-
+![PCB](/images/pcb.png)
+Format: ![Alt Text](url)
+![schematic](/images/sch.png)
+Format: ![Alt Text](url)
 Components
 
 - Arduino Pro Micro (Chosen because microUSB)
